@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ITask } from '../../Task';
+import { ITask, TAddTask } from '../../Types';
 import { TaskService } from '../../services/task.service';
 
 
@@ -30,6 +30,10 @@ export class TasksComponent implements OnInit {
       }
       return oldTask;
     })));
+  }
+
+  addTask(task: TAddTask) {
+    this.taskService.addTask(task).subscribe((t) => this.tasks.unshift(t));
   }
 
 

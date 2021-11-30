@@ -1,4 +1,4 @@
-import { ITask } from './Task';
+import { ITask } from './Types';
 
 export const TASKS: ITask[] = [
   {

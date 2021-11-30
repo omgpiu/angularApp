@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import { ITask } from '../../Task';
+import { ITask } from '../../Types';
 
 interface IOnToggle {
   id: number;

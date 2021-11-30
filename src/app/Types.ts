@@ -4,3 +4,5 @@ export interface ITask {
   day: string;
   reminder: boolean;
 }
+
+export type TAddTask = Omit<ITask, 'id'>

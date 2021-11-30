@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ITask } from '../Task';
+import { ITask, TAddTask } from '../Types';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
@@ -18,7 +18,7 @@ export class TaskService {
   constructor(private readonly http: HttpClient) {
   }
 
-  private getUrl(id: number) {
+  private getUrl(id?: number) {
     return `${this.apiUrl}/${id}`;
   }
 
@@ -32,5 +32,8 @@ export class TaskService {
 
   changeReminder(task: ITask): Observable<ITask> {
     return this.http.put<ITask>(this.getUrl(task.id), task, httpOptions);
+  }
+  addTask(task: TAddTask): Observable<ITask> {
+    return this.http.post<ITask>(this.apiUrl, task, httpOptions);
   }
 }
